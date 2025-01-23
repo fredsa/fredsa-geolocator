@@ -1,17 +1,10 @@
-application: fredsa-geolocator
-version: gitmd5hash
-runtime: python27
-api_version: 1
-threadsafe: yes
+# https://cloud.google.com/appengine/docs/standard/reference/app-yaml?tab=go
+runtime: go123
+
+# https://cloud.google.com/appengine/docs/standard/reference/app-yaml?tab=go#runtime_and_app_elements
+app_engine_apis: on
 
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
-
-- url: .*
-  script: main.app
-
-libraries:
-- name: webapp2
-  version: latest
+- url: /.*
+  script: auto
+  secure: optional
